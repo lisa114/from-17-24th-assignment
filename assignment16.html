@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            background-color: aqua;
+        }
+
+        .two {
+            background-color: red;
+        }
+
+        .three {
+            background-color: blueviolet;
+        }
+
+        .four {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>geekster</h1>
+    <script>
+        const names = ['virat', 'dhoni', 'messi', 'ronaldo']
+
+        const series = ['one', 'two', 'three', 'four']
+        for (let i = 0; i < names.length; i++) {
+            const newElement = document.createElement('p')
+            newElement.innerText = names[i]
+            newElement.classList.add(series[i])
+            const target = document.querySelector('h1')
+            target.appendChild(newElement)
+        }
+    </script>
+
+</body>
+
+</html>
