@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="script.css">
+    <style>
+        .container{
+    height: 300px;
+    width: 320px;
+    border: 1px solid silver;
+    padding: 20px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.geek{
+    padding: 4px;
+}
+ input{
+    border-radius: 5px;
+    width: 100%;
+}
+label{
+    display: block;
+}
+.btn{
+    border-radius: 3px;
+    background-color: rgb(77, 208, 77);
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    margin:4px;
+    cursor: pointer;
+}
+.geekst{
+    color: rgb(41, 150, 41);
+    margin: 6px;
+}
+.error{
+    border: 2px solid red;
+}
+.success{
+    border:2px solid rgb(77, 208, 77);
+}
+small{
+    color: rgb(192, 18, 18);
+    font-size: 8px;
+    visibility: hidden;
+}
+small.display{
+ visibility: visible;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1 class="geekst">login to your account</h1>
+        <form class="geeks">
+            <div class="geek">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="enter your name">
+                <small id="small">this fill is mandatory</small>
+            </div>
+            <div class="geek">
+                <label for="email">email</label>
+                <input type="text" id="email" placeholder="enter your email">
+            </div>
+            <div class="geek">
+                <label for="password">password</label>
+                <input type="text" id="password" placeholder="enter your password">
+            </div>
+            <div class="geek">                <label for=" confirm-password">confirm-password</label>
+                <input type="text" id="confirm-password" placeholder="enter your confirm-password">
+            </div>
+            <button  type="submit" class="btn" id="button"> submit</button>
+        </form>
+    </div>
+    <script>
+        const nameElement = document.getElementById('name')
+const emailElement = document.getElementById('email')
+const passwordElement = document.getElementById('password')
+const confirmpasswordElement = document.getElementById('confirm-password')
+const buttonElement = document.getElementById('button')
+const smallElement = document.getElementById('small')
+
+const entireform = document.querySelector('form')
+entireform.addEventListener('submit', submitform)
+//buttonElement.addEventListener('click',buttonclick)
+
+// function buttonclick(){
+///   console.log('button is clicked')
+// }
+function submitform(e) {
+   e.preventDefault()
+   console.log('form is submitted')
+
+   if (nameElement.value === "") {
+      console.log("name is empty")
+      nameElement.classList = 'error'
+      smallElement.classList = 'display'
+   } else {
+      nameElement.classList = 'success'
+   }
+
+   if (emailElement.value === "") {
+      console.log("name is empty")
+      emailElement.classList = 'error'
+   } else {
+      emailElement.classList = 'success'
+   }
+
+   if (passwordElement.value === "") {
+      console.log("name is empty")
+      passwordElement.classList = 'error'
+   } else {
+      passwordElement.classList = 'success'
+   }
+   if (confirmpasswordElement.value === "") {
+      console.log("name is empty")
+      confirmpasswordElement.classList = 'error'
+   } else {
+      confirmpasswordElement.classList = 'success'
+   }
+   if (passwordElement.value !== confirmpasswordElement.value) {
+      console.log('password is not matching')
+      confirmpasswordElement.classList = 'error'
+      passwordElement.classList = 'error'
+
+   }
+   if (passwordElement.value.includes('@') === false || passwordElement.value.includs('$') === false)
+      console.log('password not contain @ or $ ')
+}
+const charecters = ['@', '$', '#']
+let counter = 0
+for (let i = 0; i = charecters.length; i++) {
+   if (passwordElement.value.includes(charecters[i] === false)) {
+      counter++
+      console.log(charecters[i], '_', counter)
+   }
+
+
+if (passwordElement.value === confirmpasswordElement.value) {
+   const div = document.querySelector('container')
+  // div.innertext = `<p>thanks for submitting</p>`
+
+}
+}
+
+
+    </script>
+</body>
+
+</html>
