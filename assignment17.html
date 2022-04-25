@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .normal-size{
+            height: 250px;
+            width: 250px;
+        }
+        .large-size{
+            height: 350px;
+            width: 350px;
+        }
+    </style>
+</head>
+<body>
+    <h1>geekster</h1>
+    <img id="img" src="">
+    <script>
+        document.querySelector('h1').innerHTML=`<img class="normal-size" src="https://th.bing.com/th/id/R.896eebf38ae284860fc49f6ac662951a?rik=jjYx1BH1gQntcQ&pid=ImgRaw&r=0"></img>`
+const imageElement= document.querySelector('img')
+imageElement.addEventListener('mouseover',increasesize)
+function increasesize(){
+imageElement.classList.remove('normal-size')
+imageElement.classList.add('large-size')
+}
+imageElement.addEventListener('mouseout',originalsize)
+
+function originalsize(){
+ imageElement.classList.add('normal-size')
+ imageElement.classList.remove('large-size')
+}
+    </script>
+    
+</body>
+</html>
